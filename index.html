@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calculator</title>
+</head>
+<title>
+    basic calculator</title>
+<body>
+<script>
+    function pick(val)
+    {
+        document.getElementById("a").value +=val;
+    }
+    function solve()
+    {
+       var x= document.getElementById("a").value;
+       var y= eval(x);
+       document.getElementById("a").value=y;
+    }
+    function clr()
+    {
+        document.getElementById("a").value =" ";
+    }
+   function deleteLast() 
+   {
+    let input = document.getElementById("a");
+    input.value = input.value.slice(0, -1);
+   }
+</script>
+	<div class="calculator">
+        <input type="text" placeholder="0" id="a">
+   
+          <div class="button">
+				<input type="button" value="7" onclick="pick(7)">
+				<input type="button" value="8"  onclick="pick(8)"> 
+				<input type="button" value="9"  onclick="pick(9)"> 	
+				<input type="button" value="*"  onclick="pick('*')">
+          </div>
+
+
+          <div>
+                <input type="button" value="4"  onclick="pick(4)">
+				<input type="button" value="5"  onclick="pick(5)">
+				<input type="button" value="6"  onclick="pick(6)"> 	
+				<input type="button" value="/"  onclick="pick('/')"> 
+                <input type="button" value="DEL" onclick="deleteLast()"> 
+          </div>
+
+
+          <div>
+                <input type="button" value="1"  onclick="pick(1)">
+				<input type="button" value="2"  onclick="pick(2)"> 
+				<input type="button" value="3"  onclick="pick(3)">
+				<input type="button" value="+"  onclick="pick('+')">
+                <input type="button" value="AC"  onclick="clr()">
+         </div>
+
+
+          <div>
+                <input type="button" value="0"  onclick="pick(0)">
+				<input type="button" value="."  onclick="pick('.')"> 
+				<input type="button" value="%"  onclick="pick('%')"> 
+                <input type="button" value="-"  onclick="pick('-')">
+				<input type="button" value="ANS" onclick="solve()">  
+          </div>
+   </div>   
+    
+</body>
+</html>
